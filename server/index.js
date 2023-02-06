@@ -1,5 +1,5 @@
-import express from 'express';
-import mysql from 'mysql2';
+const express = require('express');
+const mysql = require('mysql2');
 
 const app = express();
 
@@ -19,6 +19,10 @@ connection.connect((err) => {
 })
 
 const PORT = process.env.PORT || 3001;
+
+// app.get('/main', (req, res) => {
+//     res.redirect('http://localhost:3000');
+// })
 
 app.listen(PORT, () => {
     console.log('Server has been started on port:', PORT);

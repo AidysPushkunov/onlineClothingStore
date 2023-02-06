@@ -1,0 +1,17 @@
+.main {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    background-color: white;
+}
+
+.image_border {
+    width: 200px;
+    height: 150px;
+    /*margin: 10px;*/
+    overflow: hidden;
+}
+
+.image_border img {
+    width: 200px;
+}
