@@ -1,6 +1,160 @@
 .main {
-    width: 800px;
-    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    height: 500px;
     margin: 20px auto;
-    background-color: white;
+    /*background-color: #e7e7e7;*/
+    cursor: pointer;
+}
+
+.image {
+    margin: auto 0px auto 0px;
+    width: 300px;
+    height: 450px;
+    overflow: hidden;
+}
+
+
+.image img {
+    position: relative;
+    width: 450px;
+
+    right: 55%;
+}
+
+.text {
+    margin: auto auto;
+    text-align: center;
+    max-width: 600px;
+    word-wrap: break-word;
+}
+
+.title {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #818181;
+    margin-bottom: 20px;
+
+}
+
+.brand {
+    font-size: 23px;
+    font-weight: 600;
+    color: #5b5b5b;
+    opacity: .5;
+}
+
+.line {
+    margin: -25px auto 10px auto;
+    opacity: .5;
+
+    border-bottom: 3px solid #5b5b5b;
+
+    width: 30px;
+    height: 30px;
+}
+
+.description {
+    color: #818181;
+}
+
+@media(max-width: 1030px) {
+    .main {
+        margin: 10px auto;
+        scale: 80%;
+    }
+}
+
+@media(max-width: 950px) {
+    .main {
+        margin: 0px auto;
+        scale: 75%;
+    }
+}
+
+@media(max-width: 920px) {
+    .main {
+        margin: auto 0px auto -10px;
+
+        margin: -50px auto;
+        scale: 70%;
+    }
+}
+
+@media(max-width: 850px) {
+    .main {
+        margin-right: 400px;
+        scale: 60%;
+    }
+    .image {
+        margin: auto 0px auto -200px;
+    }
+}
+
+@media(max-width: 800px) {
+    .main {
+        margin-top: -100px;
+        margin-right: 400px;
+        scale: 50%;
+    }
+    .image {
+        margin: auto 0px auto -300px;
+    }
+}
+
+@media(max-width: 750px) {
+    .main {
+        max-width: 500px;
+
+        justify-content: center;
+        margin-top: -150px;
+        margin-right: 20px;
+        scale: 40%;
+    }
+    .image {
+        margin: auto 0px auto -500px;
+    }
+
+    .text {
+        word-wrap: break-word;
+    }
+}
+
+@media(max-width: 700px) {
+    .main {
+        max-width: 500px;
+
+        justify-content: center;
+        margin-top: -150px;
+        margin-right: -70px;
+        scale: 40%;
+    }
+    .image {
+        margin: auto 0px auto -500px;
+    }
+
+    .text {
+        word-wrap: break-word;
+    }
+}
+
+
+@media(max-width: 550px) {
+    .main {
+        max-width: 500px;
+
+        justify-content: center;
+        margin-top: -150px;
+        margin-right: -100px;
+        scale: 40%;
+    }
+    .image {
+        margin: auto 0px auto -500px;
+    }
+
+    .text {
+        word-wrap: break-word;
+    }
 }

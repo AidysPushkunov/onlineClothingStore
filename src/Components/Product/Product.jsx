@@ -7,7 +7,7 @@ const Product = (props) => {
                 <img src={props.img} alt="title"/>
             </div>
             <div className={product.title}>{props.title}</div>
-            <div className={product.description}>{props.description}</div>
+            {/*<div className={product.description}>{props.description}</div>*/}
         </div>
     )
 }

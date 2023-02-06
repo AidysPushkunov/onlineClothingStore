@@ -1,5 +1,13 @@
-.main {
-    max-width: 1250px;
+.header_main {
+    display: block;
+    max-width: 1000px;
     margin: 5px auto;
-    background-color: #6c6c6c;
+    /*background-color: #6c6c6c;*/
+}
+
+.products {
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
 }

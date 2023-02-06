@@ -1,17 +1,88 @@
 .main {
     width: 200px;
-    height: 150px;
-    margin: 10px;
+    height: 100%;
+    /*margin: 15px;*/
+    margin: 20px auto;
     background-color: white;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+
+.title {
+    color: #818181;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.description {
+    font-size: 8px;
+    color: #818181;
+    margin: 10px 0;
+
 }
 
 .image_border {
     width: 200px;
-    height: 150px;
+    height: 120px;
     /*margin: 10px;*/
     overflow: hidden;
 }
 
 .image_border img {
     width: 200px;
+}
+
+
+
+@media(max-width: 1030px) {
+    .main {
+        scale: 90%;
+    }
+}
+
+@media(max-width: 950px) {
+    .main {
+        scale: 100%;
+
+    }
+}
+
+@media(max-width: 920px) {
+    .main {
+        scale: 80%;
+
+    }
+}
+
+@media(max-width: 850px) {
+    .main {
+        scale: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media(max-width: 800px) {
+    .main {
+        scale: 100%;
+    }
+}
+
+@media(max-width: 750px) {
+    .main {
+        scale: 100%;
+        margin-top: -50px;
+    }
+}
+
+@media(max-width: 700px) {
+    .main {
+        scale: 100%;
+    }
+}
+@media(max-width: 550px) {
+    .main {
+        scale: 100%;
+        margin-left: 0;
+    }
 }
