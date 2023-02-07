@@ -9,15 +9,19 @@
     display: flex;
     justify-content: space-between;
     /*margin: 0 auto;*/
-    position: absolute;
+    position: fixed;
+    background-color: #fff;
+
     height: 60px;
-    max-width: 1300px;
+    /*max-width: 1300px;*/
+
     width: 100%;
     z-index: 10;
     border-bottom: 1px solid #e7e7e7;
 }
 
 .logo img{
+    margin-left: 50px;
     width: 200px;
 }
 
@@ -63,7 +67,7 @@
 
 .search img {
     position: absolute;
-    right: 210px;
+    right: 200px;
     top: 15px;
     cursor: pointer;
 }
@@ -76,7 +80,7 @@
 }
 
 .basket img {
-    margin: 10px 20px;
+    margin: 10px 0px;
     width: 30px;
 
     scale: 80%;
@@ -98,7 +102,7 @@
 @media(max-width: 700px) {
     .search img {
         /*display: block;*/
-        margin-right: 170px;
+        margin-right: 200px;
         right: 0;
     }
     .search input  {

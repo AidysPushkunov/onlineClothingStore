@@ -1,7 +1,7 @@
 import style from './Navigation.module.css';
 import Burger from "../Burger/Burger";
 
-const Navigation = () => {
+const Navigation = (props) => {
     return (
         <div className={style.navigation}>
             <div className={style.content}>
@@ -10,12 +10,12 @@ const Navigation = () => {
                 </div>
                 <div className={style.text}>
                     <div className={style.text_nav}>
-                        <ul>
-                            <li><a href="frontend/src/Components">Главная</a></li>
-                            <li><a href="frontend/src/Components">Товары</a></li>
-                            <li><a href="frontend/src/Components">Новости</a></li>
-                            <li><a href="frontend/src/Components">О нас</a></li>
-                        </ul>
+                        {/*<ul>*/}
+                        {/*    <li><a href="frontend/src/Components">Главная</a></li>*/}
+                        {/*    <li><a href="frontend/src/Components">Товары</a></li>*/}
+                        {/*    <li><a href="frontend/src/Components">Новости</a></li>*/}
+                        {/*    <li><a href="frontend/src/Components">О нас</a></li>*/}
+                        {/*</ul>*/}
                         <div className={style.search}>
                             <input type="text" placeholder={'Поиск...'} />
                             <img src="./uploads/images/sprites/search.png" alt="search"/>
@@ -26,7 +26,7 @@ const Navigation = () => {
                         <div className={style.basket}>
                             <img src="./uploads/images/sprites/basket.png" alt="basket"/>
                         </div>
-                        <Burger />
+                        <Burger active={props.active} setActive={props.setActive} />
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 .burger {
     display: block;
-    margin: 20px;
+    margin: 20px 50px 20px 20px;
     cursor: pointer;
 }
 
