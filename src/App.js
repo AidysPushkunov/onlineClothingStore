@@ -7,7 +7,8 @@ import Menu from './Components/Menu/Menu';
 import Burger from './Components/Burger/Burger';
 
 function App() {
-    const [menuActive, setMenuActive] = useState(false)
+    const [menuActive, setMenuActive] = useState(false);
+    const [burgerActive, setBurgerActive] = useState(false);
 
     const items = [{id: 1, value: "Главная", href: "/main"}, {id: 2, value: "Товары", href: "/products"}, {id: 3, value: "Новости", href: "/news"}, {id: 4, value: "О нас", href: "/about"}];
 
@@ -17,7 +18,7 @@ function App() {
         <Navigation active={menuActive} setActive={setMenuActive}/>
         <Header />
 
-        <Menu active={menuActive} setActive={setMenuActive} items={items}/>
+        <Menu active={menuActive} setActive={setMenuActive} items={items} burgerActive={burgerActive} setBurgerActive={setBurgerActive} />
     </div>
   );
 }
