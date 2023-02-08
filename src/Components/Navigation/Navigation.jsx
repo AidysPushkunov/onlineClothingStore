@@ -2,6 +2,12 @@ import style from './Navigation.module.css';
 import Burger from "../Burger/Burger";
 
 const Navigation = (props) => {
+
+
+    // console.log( "Вот твои пропсы: ", props.setBurgerActive)
+    // console.log( "Вот твои пропсы: ", props.burgerActive)
+    // console.log(  "Вот твои пропсы: ", props.setBurgerActive(!props.burgerActive))
+
     return (
         <div className={style.navigation}>
             <div className={style.content}>
