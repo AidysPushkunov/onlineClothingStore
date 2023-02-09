@@ -1,5 +1,12 @@
 import React from 'react';
+
+import App from '../../App';
 import './Menu.css';
+
+
+
+import { Routes, Route, Link } from 'react-router-dom';
+ 
 
 const Menu = ({  items, active, setActive }) => {
     return (
@@ -8,12 +15,17 @@ const Menu = ({  items, active, setActive }) => {
             <div className="menu__content" onClick={e => e.stopPropagation()}>
 
                 <ul>
-                    {items.map(item =>
+                    {
+                    items.map(item =>
                         <li key={item.id}>
-                            <a href={item.href}>{item.value}</a>
+                            <Link to={item.href}>{item.value}</Link>
                         </li>
-                    )}
+                        
+                    )
+                    }
+                
                 </ul>
+
             </div>
         </div>
     );
