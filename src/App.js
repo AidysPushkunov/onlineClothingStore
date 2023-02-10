@@ -8,6 +8,8 @@ import React, {useState} from 'react';
 import Navigation from './Components/Navigation/Navigation';
 import Header from './Components/Header/Header';
 import Menu from './Components/Menu/Menu';
+import Registration from './Components/Ragistration/Ragistration'
+import Authication from "./Components/Authication/Authication";
 
 // import Burger from './Components/Burger/Burger';
 
@@ -25,12 +27,13 @@ function App() {
     <div>
         {/*<Burger active={menuActive} setActive={setMenuActive}/>*/}
         <Navigation active={menuActive} setActive={setMenuActive} burgerActive={burgerActive} setBurgerActive={setBurgerActive} />
-        <Menu active={menuActive} setActive={setMenuActive} items={items} />
-        <Header />
-                            
+        <Menu active={menuActive} setActive={setMenuActive} items={items} burgerActive={burgerActive} setBurgerActive={setBurgerActive} />
         <Routes>
-                        <Route path='/main' element={<App />} />
-                        <Route path='/news' element={<News />} />
+            <Route path='/main' element={<Header />} />
+            <Route path='/news' element={<News />} />
+            <Route path='/registration' element={<Registration />} />
+            <Route path='/authication' element={<Authication />} />
+
         </Routes>
     </div>
   );

@@ -1,5 +1,6 @@
 import style from './Navigation.module.css';
 import Burger from "../Burger/Burger";
+import { Link } from 'react-router-dom';
 
 const Navigation = (props) => {
 
@@ -12,7 +13,9 @@ const Navigation = (props) => {
         <div className={style.navigation}>
             <div className={style.content}>
                 <div className={style.logo}>
-                    <img src="./uploads/images/sprites/logo.png" alt="logo"/>
+                    <Link to={'/main'}>
+                        <img src="./uploads/images/sprites/logo.png" alt="logo"/>
+                    </Link>
                 </div>
                 <div className={style.text}>
                     <div className={style.text_nav}>
@@ -24,13 +27,13 @@ const Navigation = (props) => {
                         {/*</ul>*/}
                         <div className={style.search}>
                             <input type="text" placeholder={'Поиск...'} />
-                            <img src="./uploads/images/sprites/search.png" alt="search"/>
+                            <img src="./uploads/images/sprites/search.png" alt="search"  onClick={() => {props.setActive(false); props.setBurgerActive(false)}} />
                         </div>
                         <div className={style.user_account}>
-                            <img src="./uploads/images/sprites/user_accaunt.png" alt="user_accaunt"/>
+                            <Link to={'/authication'}><img src="./uploads/images/sprites/user_accaunt.png" alt="user_accaunt" onClick={() => {props.setActive(false); props.setBurgerActive(false)}} /></Link>
                         </div>
                         <div className={style.basket}>
-                            <img src="./uploads/images/sprites/basket.png" alt="basket"/>
+                            <img src="./uploads/images/sprites/basket.png" alt="basket"   onClick={() => {props.setActive(false); props.setBurgerActive(false)}} />
                         </div>
                         <Burger active={props.active} setActive={props.setActive} burgerActive={props.burgerActive} setBurgerActive={props.setBurgerActive}/>
                     </div>
