@@ -1,7 +1,11 @@
 const express = require('express');
 const mysql = require('mysql2');
 
+const PORT = process.env.PORT || 3001;
+
 const app = express();
+
+const urlEncodedparser = express.urlencoded({ extended: false })
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -18,11 +22,16 @@ connection.connect((err) => {
     }
 })
 
-const PORT = process.env.PORT || 3001;
 
 // app.get('/main', (req, res) => {
 //     res.redirect('http://localhost:3000');
 // })
+
+
+app.post('/registration', urlEncodedparser, (req, res) => {
+    console.log(req.body);
+    res.end('This is server request:')
+})
 
 app.listen(PORT, () => {
     console.log('Server has been started on port:', PORT);
