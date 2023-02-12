@@ -7,6 +7,9 @@ import Header from './Components/Header/Header';
 import Menu from './Components/Menu/Menu';
 import Registration from './Components/Ragistration/Ragistration'
 import Authication from './Components/Authication/Authication';
+import PageNotFound from "./Components/PageNotFound/PageNotFound";
+
+
 // import Product from './Components/Product/Product';
 
 // import Burger from './Components/Burger/Burger';
@@ -32,6 +35,8 @@ function App() {
             <Route path='/registration' element={<Registration />} />
             <Route path='/authication' element={<Authication />} />
             {/*<Route path='/products' element={<Product />} />*/}
+            <Route path='/pagenotfound' element={<PageNotFound />} />
+
 
         </Routes>
     </div>

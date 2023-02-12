@@ -1,0 +1,30 @@
+.content {
+    display: flex;
+    /*max-width: 1200px;*/
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.content img {
+    width: 200px;
+}
+
+.text {
+    margin-left: 20px;
+}
+
+.text h2 {
+    color: #5b5b5b;
+}
+
+.text a {
+    position: relative;
+    text-decoration: none;
+    top: -15px;
+    color: #5b5b5b;
+}
+
+.text a:hover {
+    color: #858585;
+
+}
