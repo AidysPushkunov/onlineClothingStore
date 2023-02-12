@@ -40,8 +40,8 @@ app.post('/registration', urlEncodedParser, (req, res) => {
     let passwordRepeat = String(req.body.repeat);
 
     if (password === passwordRepeat) {
-        console.log(typeof(username), typeof(email), typeof(password), typeof(passwordRepeat));
-        console.log(username);
+        // console.log(typeof(username), typeof(email), typeof(password), typeof(passwordRepeat));
+        // console.log(username);
 
         const user = [username, email, password];
         const sql = "INSERT INTO user (full_name, email, password) VALUES(?, ?, ?)";
