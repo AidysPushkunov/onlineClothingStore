@@ -13,7 +13,7 @@ const Navigation = (props) => {
         <div className={style.navigation}>
             <div className={style.content}>
                 <div className={style.logo}>
-                    <Link to={'/main'}>
+                    <Link to={'/'}>
                         <img src="./uploads/images/sprites/logo.png" alt="logo"/>
                     </Link>
                 </div>

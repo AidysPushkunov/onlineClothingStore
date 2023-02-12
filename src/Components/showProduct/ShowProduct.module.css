@@ -22,6 +22,7 @@
     width: 450px;
 
     right: 55%;
+    z-index: -1;
 }
 
 .text {
@@ -29,6 +30,8 @@
     text-align: center;
     max-width: 600px;
     word-wrap: break-word;
+    z-index: -1;
+
 }
 
 .title {
@@ -78,7 +81,6 @@
 @media(max-width: 920px) {
     .main {
         margin: auto 0px auto -10px;
-
         margin: -50px auto;
         scale: 70%;
     }

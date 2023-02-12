@@ -1,11 +1,16 @@
 const express = require('express');
 const mysql = require('mysql2');
 
+// const utf8 = require('utf8');
+
+
+
+
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-const urlEncodedparser = express.urlencoded({ extended: false })
+const urlEncodedParser = express.urlencoded({ extended: false })
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -28,9 +33,38 @@ connection.connect((err) => {
 // })
 
 
-app.post('/registration', urlEncodedparser, (req, res) => {
-    console.log(req.body);
-    res.end('This is server request:')
+app.post('/registration', urlEncodedParser, (req, res) => {
+    let username = String(req.body.username);
+    let email = String(req.body.email);
+    let password = String(req.body.password);
+    let passwordRepeat = String(req.body.repeat);
+
+    if (password === passwordRepeat) {
+        console.log(typeof(username), typeof(email), typeof(password), typeof(passwordRepeat));
+        console.log(username);
+
+        const user = [username, email, password];
+        const sql = "INSERT INTO user (full_name, email, password) VALUES(?, ?, ?)";
+
+
+        connection.execute(sql, user, (err, results, fields) => {
+            console.log(err);
+            console.log(results); // собственно данные
+            // console.log(fields); // мета-данные полей
+        })
+
+        connection.execute("SELECT * FROM user",
+            function(err, results, fields) {
+                console.log(err);
+                console.log(results); // собственно данные
+                // console.log(fields); // мета-данные полей
+            });
+
+        res.end('This is server request:')
+        // console.log('Password incorrect');
+        // res.redirect(('http://localhost:3000/registration'));
+    }
+
 })
 
 app.listen(PORT, () => {

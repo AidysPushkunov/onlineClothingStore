@@ -10,10 +10,10 @@ const Ragistration = () => {
             </div>
             <div className={register.form}>
                 <form method={'POST'} action="http://localhost:3001/registration">
-                        <input type="text" placeholder={'фамилия и имя'} name={'full_name'}required/> <br/>
+                        <input type="text" placeholder={'фамилия и имя'} name={'username'} required/> <br/>
                         <input type="email" placeholder={'почта'} name={'email'} required /><br/>
                         <input type="password" placeholder={'пароль'} name={'password'} required /><br/>
-                        <input type="password" placeholder={'повторите пароль'} name={'password_repeat'} required /><br/>
+                        <input type="password" placeholder={'повторите пароль'} name={'repeat'} required /><br/>
                         <div className={register.button}>
                             <input type={"submit"} value={'зарегистрироваться'}/>
                         </div>

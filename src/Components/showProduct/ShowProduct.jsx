@@ -1,4 +1,4 @@
-import styleShowProduct from './ShowProduct.module.css'
+import styleShowProduct from './ShowProduct.module.css';
 
 const ShowProduct = () => {
     return (

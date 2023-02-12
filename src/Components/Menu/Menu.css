@@ -6,6 +6,7 @@
     left: 80%;
     transform: translateX(130%);
     transition: .4s all;
+    z-index: 1000;
 }
 
 .menu.active {
@@ -21,7 +22,6 @@
     left: -100%;
     backdrop-filter: blur(2px);
     position: absolute;
-    z-index: 20;
 }
 
 .menu__content {
