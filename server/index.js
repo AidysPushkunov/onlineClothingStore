@@ -54,18 +54,23 @@ app.post('/registration', urlEncodedParser, async (req, res) => {
         connection.execute(sql, user, (err, results, fields) => {
             console.log(err);
             if (err) {
-                res.redirect('http://localhost:3000/pagenotfound');
+                res.redirect('http://localhost:3000/registration?data=false');
+            } else {
+                res.redirect('http://localhost:3000/authication?data=true');
+
             }
-            console.log(results); // собственно данные
+            // console.log(results); // собственно данные
             // console.log(fields); // мета-данные полей
 
         })
 
-        res.redirect('http://localhost:3000/authication?data="Пользеватель успешно добавлен"');
+        // res.redirect('http://localhost:3000/authication?data="Пользеватель успешно добавлен"');
 
         // res.end('This is server request:')
         // console.log('Password incorrect');
         // res.redirect(('http://localhost:3000/registration'));
+    } else {
+        res.redirect('http://localhost:3000/registration?data=false');
     }
 
 })

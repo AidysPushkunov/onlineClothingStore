@@ -51,3 +51,15 @@
 .link:hover {
     text-decoration: underline;
 }
+
+.success {
+
+    font-size: 15px;
+    color: #03d203;
+}
+
+.error {
+
+    font-size: 15px;
+    color: red;
+}

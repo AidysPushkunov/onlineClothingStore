@@ -3,6 +3,21 @@ import register from './Ragistration.module.css';
 import { Link } from 'react-router-dom';
 
 const Ragistration = () => {
+
+    let params = window
+    .location
+    .search
+    .replace('?','')
+    .split('&')
+    .reduce(
+        function(p,e){
+            let a = e.split('=');
+            p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+            return p;
+        },
+        {}
+    );
+
     return (
         <div className={register.content}>
             <div className={register.title}>
@@ -18,6 +33,9 @@ const Ragistration = () => {
                             <input type={"submit"} value={'зарегистрироваться'}/>
                         </div>
                     <Link to={'/authication'} className={register.link}>У вас уже есть аккаунт</Link>
+                    {
+                        (params['data'] === undefined) ? '' : ((params['data']) ? <div className={register.error}>Пароли не совпадают.</div> : <div className={register.success}>Произошла ошибка при добавлении пользователя.</div>)
+                    }
                 </form>
             </div>
         </div>
