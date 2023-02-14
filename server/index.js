@@ -2,11 +2,6 @@ const express = require('express');
 const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
 
-// const utf8 = require('utf8');
-
-
-
-
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -27,13 +22,6 @@ connection.connect((err) => {
         console.log("Data base connection was success!")
     }
 })
-
-
-// app.get('/main', (req, res) => {
-//     res.redirect('http://localhost:3000');
-// })
-
-
 app.post('/registration', urlEncodedParser, async (req, res) => {
     let username = String(req.body.username);
     let email = String(req.body.email);
@@ -42,8 +30,6 @@ app.post('/registration', urlEncodedParser, async (req, res) => {
 
 
     if (password === passwordRepeat) {
-        // console.log(typeof(username), typeof(email), typeof(password), typeof(passwordRepeat));
-        // console.log(username);
         const salt = await bcrypt.genSalt(10);
         password = await bcrypt.hash('qwerty', salt);
 
@@ -59,16 +45,7 @@ app.post('/registration', urlEncodedParser, async (req, res) => {
                 res.redirect('http://localhost:3000/authication?data=true');
 
             }
-            // console.log(results); // собственно данные
-            // console.log(fields); // мета-данные полей
-
         })
-
-        // res.redirect('http://localhost:3000/authication?data="Пользеватель успешно добавлен"');
-
-        // res.end('This is server request:')
-        // console.log('Password incorrect');
-        // res.redirect(('http://localhost:3000/registration'));
     } else {
         res.redirect('http://localhost:3000/registration?data=false');
     }
