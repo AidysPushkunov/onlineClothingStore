@@ -35,6 +35,7 @@ const Navigation = (props) => {
                         <div className={style.basket}>
                             <img src="./uploads/images/sprites/basket.png" alt="basket"   onClick={() => {props.setActive(false); props.setBurgerActive(false)}} />
                         </div>
+
                         <Burger active={props.active} setActive={props.setActive} burgerActive={props.burgerActive} setBurgerActive={props.setBurgerActive}/>
                     </div>
                 </div>

@@ -1,9 +1,11 @@
+import styleNews from './News.module.css';
+import Article from "../Article/Article";
+
 const News = () => {
     return (
-        <h1>
-            Hello from News
-
-        </h1>
+        <div className={styleNews.articles}>
+            <Article />
+        </div>
     )
 }
 

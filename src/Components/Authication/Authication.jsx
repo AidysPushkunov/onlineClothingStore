@@ -24,7 +24,7 @@ const Authication = () => {
                 Войдите в свой аккаунт
             </div>
             <div className={authication.form}>
-                <form action="http://localhost:3001">
+                <form action="http://localhost:3001/authication" method='POST'>
                     <input type="email" placeholder={'почта'} name={'email'} required /><br/>
                     <input type="password" placeholder={'пароль'} name={'password'} required /><br/>
                     <div className={authication.button}>
