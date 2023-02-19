@@ -17,6 +17,7 @@ const Ragistration = () => {
         },
         {}
     );
+    console.log(params['data']);
 
     return (
         <div className={register.content}>
@@ -24,7 +25,7 @@ const Ragistration = () => {
                 Регистрация
             </div>
             <div className={register.form}>
-                <form method={'POST'} action="http://localhost:3001/registration">
+                <form method={'POST'} action="http://localhost:3001/api/auth/signup">
                         <input type="text" placeholder={'фамилия и имя'} name={'username'} required/> <br/>
                         <input type="email" placeholder={'почта'} name={'email'} required /><br/>
                         <input type="password" placeholder={'пароль'} name={'password'} required /><br/>
@@ -33,8 +34,9 @@ const Ragistration = () => {
                             <input type={"submit"} value={'зарегистрироваться'}/>
                         </div>
                     <Link to={'/authication'} className={register.link}>У вас уже есть аккаунт</Link>
+
                     {
-                        (params['data'] === undefined) ? '' : ((params['data']) ? <div className={register.error}>Пароли не совпадают.</div> : <div className={register.success}>Произошла ошибка при добавлении пользователя.</div>)
+                        (params['data'] === undefined) ? '' : ((params['data']) ? <div className={register.error}>{params['data']}</div> : <div className={register.success}>Произошла ошибка при добавлении пользователя.</div>)
                     }
                 </form>
             </div>
