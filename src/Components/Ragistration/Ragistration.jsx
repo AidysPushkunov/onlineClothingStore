@@ -33,10 +33,10 @@ const Ragistration = () => {
                         <div className={register.button}>
                             <input type={"submit"} value={'зарегистрироваться'}/>
                         </div>
-                    <Link to={'/authication'} className={register.link}>У вас уже есть аккаунт</Link>
+                    <Link to={'/authentication'} className={register.link}>У вас уже есть аккаунт</Link>
 
                     {
-                        (params['data'] === undefined) ? '' : ((params['data']) ? <div className={register.error}>{params['data']}</div> : <div className={register.success}>Произошла ошибка при добавлении пользователя.</div>)
+                        (params['data'] === undefined) ? '' : <div className={register.error}>{params['data']}</div>
                     }
                 </form>
             </div>

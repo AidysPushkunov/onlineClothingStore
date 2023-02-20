@@ -1,11 +1,15 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3001;
+const passport = require('passport');
+
 
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(passport.initialize());
+require('./middleware/passport')(passport);
 
 const routes = require('./settings/routs');
 routes(app);

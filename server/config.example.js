@@ -5,4 +5,5 @@ module.exports = {
     DBUSER: 'db-user',
     DBPASSWORD: 'db-password',
     DBNAME: 'dbname',
+    jwt: 'your jwt key' //Your jwt key for token generate
 }

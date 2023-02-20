@@ -30,7 +30,7 @@ const Navigation = (props) => {
                             <img src="./uploads/images/sprites/search.png" alt="search"  onClick={() => {props.setActive(false); props.setBurgerActive(false)}} />
                         </div>
                         <div className={style.user_account}>
-                            <Link to={'/authication'}><img src="./uploads/images/sprites/user_accaunt.png" alt="user_accaunt" onClick={() => {props.setActive(false); props.setBurgerActive(false)}} /></Link>
+                            <Link to={'/authentication'}><img src="./uploads/images/sprites/user_accaunt.png" alt="user_accaunt" onClick={() => {props.setActive(false); props.setBurgerActive(false)}} /></Link>
                         </div>
                         <div className={style.basket}>
                             <img src="./uploads/images/sprites/basket.png" alt="basket"   onClick={() => {props.setActive(false); props.setBurgerActive(false)}} />

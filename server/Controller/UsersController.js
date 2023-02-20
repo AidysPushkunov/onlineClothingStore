@@ -1,8 +1,10 @@
 'use strict'
 
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const response = require('./../response');
 const db = require('./../settings/db');
+const config = require('./../config')
 
 
 exports.getAllUsers =  (req, res) => {
@@ -46,7 +48,7 @@ exports.signup = (req, res) => {
 
                 const sql = "INSERT INTO `user` (`full_name`, `email`, `password`) VALUES ('"+ name +"', '"+ email +"', '"+ hashPassword +"')";
                 db.query(sql, (err, results) => {
-                    err ? console.log(err) : /*response.status(200, `Registration`, res);*/ res.redirect('http://localhost:3000/authication?data=true');
+                    err ? console.log(err) : /*response.status(200, `Registration`, res);*/ res.redirect('http://localhost:3000/authentication?data=Пользователь успешно зарегистрирован');
                 })
                 // console.log(req);
             }
@@ -55,13 +57,40 @@ exports.signup = (req, res) => {
 }
 
 exports.signin = (req, res) => {
-    db.query("SELECT `id`, `full_name`, `email`, `password` FROM `user` WHERE `email` = '"+ req.body.email +"'", (err, rows, fields) => {
+    // console.log(req.body)
+    const email = req.body.email;
+    // console.log(email)
+    db.query("SELECT `id`, `full_name`,  `email`, `password` FROM `user` WHERE `email` = '"+email+"' ", (err, rows, fields) => {
         if (err) {
-            response.status(400, err, res);
+            // response.status(400, err, res);
+            res.redirect('http://localhost:3000/pagenotfound');
+
         } else if (rows.length <= 0) {
-            response.status(404, `User not found`, res);
+            // console.log(rows)
+            // response.status(401, {message: `User not found`}, res);
+            res.redirect('http://localhost:3000/authentication?data=Пользователь не зарегистрирован');
         } else {
-            response.status(200, `user found`, res);
+            const row = JSON.parse(JSON.stringify(rows));
+            row.map(rw => {
+                const password = bcrypt.compareSync(String(req.body.password), rw.password);
+                if (password) {
+                    // Впускаем пользователя и генерируем токен
+                    const token = jwt.sign({
+                        userId: rw.id,
+                        email: rw.email
+                    }, config.jwt, {expiresIn: 120 * 120});
+                    const tokenSession = `Bearer ${token}`;
+                    console.log(tokenSession);
+                    // response.status(200, `Bearer ${token}`, res);
+                    res.redirect('http://localhost:3000/profile?id=${}');
+
+
+                } else {
+                    res.redirect('http://localhost:3000/authentication?data=Пароль не верный');
+                    // response.status(401, {message: `Пароль не верный`}, res)
+                }
+                return true;
+            })
         }
     });
 }

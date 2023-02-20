@@ -1,12 +1,12 @@
 const mysql = require('mysql2');
-const env = require('./../dbenv');
+const config = require('../config');
 
 const connection = mysql.createConnection({
-    host: env.HOST,
-    port: env.PORT,
-    user: env.DBUSER,
-    database: env.DBNAME,
-    password: env.DBPASSWORD
+    host: config.HOST,
+    port: config.PORT,
+    user: config.DBUSER,
+    database: config.DBNAME,
+    password: config.DBPASSWORD
 });
 
 connection.connect((err) => {
