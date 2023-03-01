@@ -1,9 +1,10 @@
 'use strict'
 
+
 module.exports = (app) => {
     const passport = require('passport')
-    const usersController = require('./../Controller/UsersController');
-    const productsController = require('./../Controller/ProductController');
+    const usersController = require('./../Controller/UsersController.js');
+    const productsController = require('./../Controller/ProductController.js');
 
     app
         .route('/api/users')
@@ -18,6 +19,10 @@ module.exports = (app) => {
         .post(usersController.signin);
 
     app
-        .route('/getproducts')
+        .route('/api/auth/logout')
+        .post(usersController.logout);
+
+    app
+        .route('/api/product/getproducts')
         .get(productsController.getProducts);
 }

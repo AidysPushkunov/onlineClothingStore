@@ -10,13 +10,17 @@ import {Provider} from "react-redux";
 // import store from "../store/store";
 // import Menu from "./Components/Menu/Menu";
 
+import { AuthContextProvider } from './context/authContext.js';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let renderEntireTree = (state) => {
     root.render(
         <React.StrictMode>
             <BrowserRouter>
-                <App state={state} store={store}/>
+                <AuthContextProvider>
+                    <App state={state} store={store}/>
+                </AuthContextProvider>
             </BrowserRouter>
         </React.StrictMode>
     );

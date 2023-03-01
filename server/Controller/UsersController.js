@@ -62,13 +62,13 @@ exports.signin = (req, res) => {
     // console.log(email)
     db.query("SELECT `id`, `full_name`,  `email`, `password` FROM `user` WHERE `email` = '"+email+"' ", (err, rows, fields) => {
         if (err) {
-            // response.status(400, err, res);
-            res.redirect('http://localhost:3000/pagenotfound');
+            response.status(400, err, res);
+            // res.redirect('http://localhost:3000/pagenotfound');
 
         } else if (rows.length <= 0) {
             // console.log(rows)
-            // response.status(401, {message: `User not found`}, res);
-            res.redirect('http://localhost:3000/authentication?data=Пользователь не зарегистрирован');
+            response.status(401, {message: `User not found`}, res);
+            // res.redirect('http://localhost:3000/authentication?data=Пользователь не зарегистрирован');
         } else {
             const row = JSON.parse(JSON.stringify(rows));
             row.map(rw => {
@@ -83,15 +83,22 @@ exports.signin = (req, res) => {
                     }).status(200).json(other)
 
                     // response.status(200, `Bearer ${token}`, res);
-                    res.redirect('http://localhost:3000/profile?id=${}');
+                    // res.redirect('http://localhost:3000/profile?id=${}');
 
 
                 } else {
-                    res.redirect('http://localhost:3000/authentication?data=Пароль не верный');
-                    // response.status(401, {message: `Пароль не верный`}, res)
+                    // res.redirect('http://localhost:3000/authentication?data=Пароль не верный');
+                    response.status(401, {message: `Пароль не верный`}, res)
                 }
                 return true;
             })
         }
     });
+}
+
+exports.logout = (req, res) => {
+    res.clearCookie("access_token", {
+        sameSite: "none",
+        secure: true
+    }).status(200).json("User has been logged out.")
 }

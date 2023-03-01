@@ -15,7 +15,7 @@ const Header = (props) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`/getproducts`);
+                const res = await axios.get(`/api/product/getproducts`);
                 setProducts(res.data.values);
             } catch (err) {
                 console.log(err);
@@ -31,7 +31,9 @@ const Header = (props) => {
             <ShowProduct />
             <div className={header.products}>
                 {products.map(e => {
-                    return (<Product key={e.id} img={e.img} title={e.title} description={e.description}/>)
+                    return (
+                        <Product key={e.id} img={e.img} title={e.title} description={e.description}/>
+                    )
                 })}
             {/*    <Product img={'https://www.charuel.ru/upload/resize_cache/iblock/73f/445_445_1/%D0%92%D0%AB%D0%9F%D0%90%D0%94%D0%90%D0%A8%D0%9A%D0%90.jpg'} title={'КОФТА LOUNGE TONAL LOGO СВОБОДНОГО КРОЯ ИЗ ТОНКОГО ТКАНЬЯ'} description={'Это изделие содержит переходный хлопок, позволяющий фермерам перейти на органическое земледелие в течение трех лет. Хлопок выращивается без применения химических удобрений, пестицидов и генетически модифицированных семян'}/>*/}
             {/*    <Product img={'https://basket-03.wb.ru/vol381/part38159/38159052/images/big/1.jpg'} title={'КОФТА LOUNGE TONAL LOGO СВОБОДНОГО КРОЯ ИЗ ТОНКОГО ТКАНЬЯ'} description={'Это изделие содержит переходный хлопок, позволяющий фермерам перейти на органическое земледелие в течение трех лет. Хлопок выращивается без применения химических удобрений, пестицидов и генетически модифицированных семян'}/>*/}
