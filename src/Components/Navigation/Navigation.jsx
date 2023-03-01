@@ -2,6 +2,9 @@ import style from './Navigation.module.css';
 import Burger from "../Burger/Burger";
 import { Link } from 'react-router-dom';
 
+// import { AuthContext } from "../context/authContext";
+
+
 const Navigation = (props) => {
 
 

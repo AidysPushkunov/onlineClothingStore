@@ -3,6 +3,7 @@
 module.exports = (app) => {
     const passport = require('passport')
     const usersController = require('./../Controller/UsersController');
+    const productsController = require('./../Controller/ProductController');
 
     app
         .route('/api/users')
@@ -15,4 +16,8 @@ module.exports = (app) => {
     app
         .route('/api/auth/signin')
         .post(usersController.signin);
+
+    app
+        .route('/getproducts')
+        .get(productsController.getProducts);
 }

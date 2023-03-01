@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import News from './Components/News/News';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 // import app from './App.css';
 import Navigation from './Components/Navigation/Navigation';
 import Header from './Components/Header/Header';
@@ -8,6 +9,8 @@ import Menu from './Components/Menu/Menu';
 import Registration from './Components/Ragistration/Ragistration'
 import Authentication from './Components/Authentication/Authentication';
 import PageNotFound from "./Components/PageNotFound/PageNotFound";
+import Store from "./store/store";
+
 
 
 // import Product from './Components/Product/Product';
@@ -17,10 +20,11 @@ import PageNotFound from "./Components/PageNotFound/PageNotFound";
 // const serverPath = 'http://localhost:3001';
 
 
-function App() {
+function App(props) {
     const [burgerActive, setBurgerActive] = useState(false);
     const [menuActive, setMenuActive] = useState(false);
 
+    let state = props.store.getState();
 
     const items = [
         {id: 1, value: "Главная", href:  "/"},
@@ -31,13 +35,14 @@ function App() {
         {id: 6, value: "Регистрация", href: "/registration"}
     ];
 
+
     return (
     <div>
         {/*<Burger active={menuActive} setActive={setMenuActive}/>*/}
         <Navigation active={menuActive} setActive={setMenuActive} burgerActive={burgerActive} setBurgerActive={setBurgerActive} />
         <Menu active={menuActive} setActive={setMenuActive} items={items} burgerActive={burgerActive} setBurgerActive={setBurgerActive} />
         <Routes>
-            <Route path='/' element={<Header />} />
+            <Route path='/' element={<Header productsData={state.productsPage.productsData} />} />
             <Route path='/news' element={<News />} />
             <Route path='/registration' element={<Registration />} />
             <Route path='/authentication' element={<Authentication />} />

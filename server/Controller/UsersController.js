@@ -75,12 +75,13 @@ exports.signin = (req, res) => {
                 const password = bcrypt.compareSync(String(req.body.password), rw.password);
                 if (password) {
                     // Впускаем пользователя и генерируем токен
-                    const token = jwt.sign({
-                        userId: rw.id,
-                        email: rw.email
-                    }, config.jwt, {expiresIn: 120 * 120});
-                    const tokenSession = `Bearer ${token}`;
-                    console.log(tokenSession);
+                    const token = jwt.sign({id:rows[0].id}, "jwtkey");
+                    const {password, ...other} = rows[0];
+
+                    res.cookie("access_token", token, {
+                        httpOnly: true
+                    }).status(200).json(other)
+
                     // response.status(200, `Bearer ${token}`, res);
                     res.redirect('http://localhost:3000/profile?id=${}');
 
