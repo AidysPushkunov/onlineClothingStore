@@ -18,7 +18,7 @@ const Menu = ({  items, active, setActive, burgerActive, setBurgerActive}) => {
                     {
                     items.map(item =>
                         <li key={item.id} >
-                            <Link to={item.href} onClick={ () => {setActive(!active); setBurgerActive(!burgerActive) } }>{item.value}</Link>
+                            <Link to={item.href} onClick={ () => {setActive(!active); setBurgerActive(!burgerActive) } } >{item.value}</Link>
                         </li>
                         
                     )

@@ -49,7 +49,7 @@ const Authentication = () => {
             // await axios.post("/auth/login", inputs);
             navigate("/");
         } catch(err) {
-            setError(err.response.data)
+            setError(err.response.data.values.message)
         }
 
     }
@@ -70,7 +70,7 @@ const Authentication = () => {
 
                     <Link to={'/registration'} className={authentication.link}>Нету аккаунта, зрегистрируйтесь</Link>
                     {
-                        (params['data'] === undefined) ? '' : <div className={authentication.notification}>{params['data']}</div>
+                        (!err) ? '' : <div className={authentication.notification}>{err}</div>
 
                     }
                     {/*{err ? <p>{err}</p> : ''}*/}

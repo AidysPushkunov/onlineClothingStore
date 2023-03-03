@@ -1,13 +1,25 @@
 .header_main {
     display: block;
-    max-width: 1000px;
-    margin: 5px auto;
+    /*max-width: 1000px;*/
     /*background-color: #6c6c6c;*/
 }
 
+.products_back_color {
+    padding: 20px 0;
+    /*background-color: #f8f8f8;*/
+
+}
+
+.products_back {
+    max-width: 1000px;
+    margin: 0px auto;
+
+}
 .products {
+
     margin-left: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
+    /*background-color: #f6f6f6;*/
 }

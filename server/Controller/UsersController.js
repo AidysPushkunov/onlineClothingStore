@@ -67,7 +67,7 @@ exports.signin = (req, res) => {
 
         } else if (rows.length <= 0) {
             // console.log(rows)
-            response.status(401, {message: `User not found`}, res);
+            response.status(401, {message: `Пользователь не найден`}, res);
             // res.redirect('http://localhost:3000/authentication?data=Пользователь не зарегистрирован');
         } else {
             const row = JSON.parse(JSON.stringify(rows));

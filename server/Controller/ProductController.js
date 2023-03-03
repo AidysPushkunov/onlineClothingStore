@@ -8,7 +8,6 @@ exports.getProducts =  (req, res) => {
             response.status(400, err, res).json({rows});
         } else {
             response.status(200, rows, res)
-            console.log(rows)
         }
     })
 }

@@ -3,13 +3,13 @@ import Burger from "../Burger/Burger";
 import { Link } from 'react-router-dom';
 import {useContext} from "react";
 
-import { AuthContext } from "../../context/authContext.js";
+// import { AuthContext } from "../../context/authContext.js";
 
 
 const Navigation = (props) => {
 
 
-    const { currentUser, logout } = useContext(AuthContext);
+    // const { currentUser, logout } = useContext(AuthContext);
 
     // console.log( "Вот твои пропсы: ", props.setBurgerActive)
     // console.log( "Вот твои пропсы: ", props.burgerActive)
@@ -37,10 +37,10 @@ const Navigation = (props) => {
                         </div>
 
 
-                        <span className={style.userName}>{currentUser?.email}</span>
+                        <span className={style.userName}>{props.currentUser?.email}</span>
 
                         {
-                            currentUser ? <span onClick={logout} className={style.logoutLink}>Logout</span> :
+                            props.currentUser ? <span onClick={props.logout} className={style.logoutLink}>Logout</span> :
                             <div className={style.user_account}>
                                 <Link to={'/authentication'}><img src="./uploads/images/sprites/user_accaunt.png" alt="user_accaunt" onClick={() => {props.setActive(false); props.setBurgerActive(false)}} /></Link>
                             </div>
