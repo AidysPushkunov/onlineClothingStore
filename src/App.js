@@ -70,7 +70,7 @@ function App(props) {
             <Route path='/products' element={<Products products={products} />} />
             {/*<Route path='/products' element={<Product />} />*/}
             <Route path='/pagenotfound' element={<PageNotFound />} />
-            <Route path='/single/:id' element={<SingleProduct />} />
+            <Route path='/single/:id' element={<SingleProduct products={products} />} />
 
 
         </Routes>
