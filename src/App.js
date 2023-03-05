@@ -11,6 +11,7 @@ import PageNotFound from "./Components/PageNotFound/PageNotFound";
 import {useContext} from "react";
 import Store from "./store/store";
 import Products from "./Components/Products/Products";
+import SingleProduct from './Components/SingleProduct/SingleProduct'
 
 import { AuthContext } from './context/authContext.js';
 
@@ -69,6 +70,7 @@ function App(props) {
             <Route path='/products' element={<Products products={products} />} />
             {/*<Route path='/products' element={<Product />} />*/}
             <Route path='/pagenotfound' element={<PageNotFound />} />
+            <Route path='/single/:id' element={<SingleProduct />} />
 
 
         </Routes>

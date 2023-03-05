@@ -17,7 +17,7 @@ const Header = (props) => {
                     <div className={header.products}>
                         {props.products.map(e => {
                             return (
-                                <Product key={e.id} img={e.img} title={e.title} description={e.description} price={e.price}/>
+                                <Product key={e.id} id={e.id} img={e.img} title={e.title} description={e.description} price={e.price}/>
                             )
                         })}
                     </div>
