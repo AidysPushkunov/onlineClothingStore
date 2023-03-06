@@ -1,5 +1,7 @@
 import React from 'react';
 import {useParams} from "react-router";
+import {useContext} from "react";
+import {AuthContext} from "../../context/authContext";
 import PageNotFound from "../PageNotFound/PageNotFound";
 // import axios from "axios";
 // import {response} from "express";
@@ -11,12 +13,12 @@ const SingleProduct = (props) => {
     const productID = params.id;
 
 
-
+    const { currentUser } = useContext(AuthContext);
 
     return (
         <div>
             {
-                props.products.map(e => {
+                !currentUser ? 'Авторизоваться эдалзар је' : props.products.map(e => {
                     if (e.id == productID) {
                         return (<div key={e.id}>
                             <div>
