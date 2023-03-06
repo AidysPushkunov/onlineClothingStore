@@ -36,7 +36,7 @@ let store = {
 }
 
 
-console.log(store._state.productsPage.productsData)
+// console.log(store._state.productsPage.productsData)
 
 
 export default store;

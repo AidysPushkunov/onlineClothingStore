@@ -1,30 +1,23 @@
 import React from 'react';
-import {useParams, useNavigate,  useLocation} from "react-router";
+import {useParams, useNavigate, Navigate} from "react-router";
 import {useContext} from "react";
 import {AuthContext} from "../../context/authContext";
-// import {RedirectFunction} from "react-router-dom";
 
-import PageNotFound from "../PageNotFound/PageNotFound";
-// import axios from "axios";
-// import {response} from "express";
 
 const SingleProduct = (props) => {
 
-    // const [product, setProduct] = useState([]);
     const params = useParams();
     const productID = params.id;
 
     const navigate = useNavigate();
 
-    const location = useLocation();
-
-
 
     const { currentUser } = useContext(AuthContext);
 
     const userFalse = () => {
-            navigate("/authentication");
-            window.location.reload()
+            return <Navigate to={'/authentication'} > </Navigate>
+            // navigate("/authentication");
+            // window.location.reload();
     }
 
     return (
