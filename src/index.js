@@ -15,11 +15,13 @@ import { AuthContextProvider } from './context/authContext.js';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let renderEntireTree = (state) => {
+
     root.render(
         <React.StrictMode>
             <BrowserRouter>
                 <AuthContextProvider>
                     <App state={state} store={store}/>
+
                 </AuthContextProvider>
             </BrowserRouter>
         </React.StrictMode>

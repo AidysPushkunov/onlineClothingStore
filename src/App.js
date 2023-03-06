@@ -59,22 +59,23 @@ function App(props) {
 
 
     return (
-    <div>
+    <>
         {/*<Burger active={menuActive} setActive={setMenuActive}/>*/}
-        <Navigation active={menuActive} setActive={setMenuActive} burgerActive={burgerActive} setBurgerActive={setBurgerActive} currentUser={currentUser} />
+        <Navigation active={menuActive} setActive={setMenuActive} burgerActive={burgerActive} setBurgerActive={setBurgerActive} currentUser={currentUser} logout={logout}/>
         <Menu active={menuActive} setActive={setMenuActive} items={items} burgerActive={burgerActive} setBurgerActive={setBurgerActive} logout={logout}/>
-        <Routes>
-            <Route path='/' element={<Header products={products} />} />
-            <Route path='/registration' element={<Registration />} />
-            <Route path='/authentication' element={<Authentication />} />
-            <Route path='/products' element={<Products products={products} />} />
-            {/*<Route path='/products' element={<Product />} />*/}
-            <Route path='/pagenotfound' element={<PageNotFound />} />
-            <Route path='/single/:id' element={<SingleProduct products={products} />} />
+        {/*<BrowserRouter>*/}
+            <Routes>
+                <Route path='/' element={<Header products={products} />} />
+                <Route path='/registration' element={<Registration />} />
+                <Route path='/authentication' element={<Authentication />} />
+                <Route path='/products' element={<Products products={products} />} />
+                {/*<Route path='/products' element={<Product />} />*/}
+                <Route path='/pagenotfound' element={<PageNotFound />} />
+                <Route path='/single/:id' element={<SingleProduct products={products} />} />
+            </Routes>
+        {/*</BrowserRouter>*/}
 
-
-        </Routes>
-    </div>
+    </>
   );
 }
 

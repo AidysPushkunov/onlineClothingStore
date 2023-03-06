@@ -18,7 +18,7 @@ const SingleProduct = (props) => {
             {
                 props.products.map(e => {
                     if (e.id == productID) {
-                        return (<div>
+                        return (<div key={e.id}>
                             <div>
                                 <img src={e.img} alt="image_product" width={'200px'}/>
                             </div>
