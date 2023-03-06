@@ -2,6 +2,7 @@ import React from 'react';
 import {useParams, useNavigate, Navigate} from "react-router";
 import {useContext} from "react";
 import {AuthContext} from "../../context/authContext";
+import single_style from './SingleProject.module.css';
 
 
 const SingleProduct = (props) => {
@@ -25,14 +26,22 @@ const SingleProduct = (props) => {
             {
                 !currentUser ? userFalse() : props.products.map(e => {
                     if (e.id == productID) {
-                        return (<div key={e.id}>
-                            <div>
-                                <img src={e.img} alt="image_product" width={'200px'}/>
+                        return (<div className={single_style.container}>
+                            <div key={e.id} className={single_style.main}>
+                                <div className={single_style.img}>
+                                    <img src={e.img} alt="image_product"/>
+                                </div>
+                                <div className={single_style.info}>
+                                    <div className={single_style.title}>{e.title}</div>
+                                    <div className={single_style.description}>{e.description}</div>
+                                    <div className={single_style.price_buttons}>
+                                        <div className={single_style.price}>{e.price} &#8381;</div>
+                                        <button className={single_style.button_add}>Добавить в корзину</button>
+                                    </div>
+
+                                </div>
                             </div>
-                            <div>{e.title}</div>
-                            <div>{e.description}</div>
-                            <div>{e.price}</div>
-                        </div>)
+                            </div>)
                     }
                 })
             }

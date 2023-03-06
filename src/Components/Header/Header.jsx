@@ -7,18 +7,19 @@ import axios from "axios";
 
 const Header = (props) => {
 
-
-
     return (
         <div className={header.header_main}>
             <ShowProduct />
             <div className={header.products_back_color}>
                 <div className={header.products_back}>
+                <h1>Каталог одежды</h1>
                     <div className={header.products}>
                         {props.products.map(e => {
+                
                             return (
                                 <Product key={e.id} id={e.id} img={e.img} title={e.title} description={e.description} price={e.price}/>
                             )
+                            
                         })}
                     </div>
                 </div>

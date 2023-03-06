@@ -2,11 +2,22 @@
     display: block;
     /*max-width: 1000px;*/
     /*background-color: #6c6c6c;*/
+
+}
+
+
+h1 {
+    font-weight: 400;
+    /* color: white; */
+    color: rgb(176, 176, 176);
+    text-align: center;
 }
 
 .products_back_color {
     padding: 20px 0;
-    /*background-color: #f8f8f8;*/
+    background-color: #ffffff;
+    /* background-color: #282828; */
+
 
 }
 
@@ -22,4 +33,5 @@
     flex-wrap: wrap;
     justify-content: left;
     /*background-color: #f6f6f6;*/
+
 }

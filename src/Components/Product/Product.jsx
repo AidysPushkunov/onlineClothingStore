@@ -9,9 +9,11 @@ const Product = (props) => {
                 <div className={product.image_border}>
                     <img src={props.img} alt="title"/>
                 </div>
-                <div className={product.title}>{props.title}</div>
-                <div className={product.price}>{props.price} &#8381;</div>
-
+                <div className={product.info}>
+                    <div className={product.title}>{props.title}</div>
+                    <div className={product.description}>{props.description}</div>
+                    <div className={product.price}>{props.price} &#8381;</div>
+                </div>
                 {/*<div className={product.description}>{props.description}</div>*/}
             </Link>
         </div>
