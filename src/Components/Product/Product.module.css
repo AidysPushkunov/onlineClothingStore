@@ -86,6 +86,11 @@
 
 .image_border img {
     width: 100%;
+    transition: .5s all;
+}
+
+.image_border img:hover {
+    scale: 1.2;
 }
 
 
