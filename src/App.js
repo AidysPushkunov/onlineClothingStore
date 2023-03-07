@@ -14,6 +14,7 @@ import {useContext} from "react";
 import Store from "./store/store";
 import Products from "./Components/Products/Products";
 import SingleProduct from './Components/SingleProduct/SingleProduct'
+import Admin from './Components/Admin/Admin';
 
 import { AuthContext } from './context/authContext.js';
 
@@ -38,7 +39,8 @@ function App(props) {
         {id: 1, value: "Главная", href:  "/"},
         {id: 2, value: "Товары", href: "/products"},
         {id: 3, value: "Корзина", href: "/basket"},
-        {id: 4, value: "О нас", href: "/about"}
+        {id: 4, value: "О нас", href: "/about"},
+        currentUser?.root ? {id: 4, value: "Панель администратора", href: "/admin"} : ''
 
     ];
 
@@ -74,6 +76,8 @@ function App(props) {
                 {/*<Route path='/products' element={<Product />} />*/}
                 <Route path='/pagenotfound' element={<PageNotFound />} />
                 <Route path='/single/:id' element={<SingleProduct products={products} />} />
+                <Route path='/admin' element={<Admin currentUser={currentUser} />} />
+
             </Routes>
         {/*</BrowserRouter>*/}
 

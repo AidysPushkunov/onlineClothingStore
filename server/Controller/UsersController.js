@@ -60,7 +60,7 @@ exports.signin = (req, res) => {
     // console.log(req.body)
     const email = req.body.email;
     // console.log(email)
-    db.query("SELECT `id`, `full_name`,  `email`, `password` FROM `user` WHERE `email` = '"+email+"' ", (err, rows, fields) => {
+    db.query("SELECT `id`, `full_name`,  `email`, `password`, `root` FROM `user` WHERE `email` = '"+email+"' ", (err, rows, fields) => {
         if (err) {
             response.status(400, err, res);
             // res.redirect('http://localhost:3000/pagenotfound');
